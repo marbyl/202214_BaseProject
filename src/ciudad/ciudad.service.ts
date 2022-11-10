@@ -25,7 +25,6 @@ export class CiudadService {
     }
 
     async create(ciudad: CiudadEntity): Promise<CiudadEntity> {
-        var paisesPermitidos : string[] = ['Argentina', 'Ecuador', 'Paraguay'];
         if (!esPaisPermitido(ciudad.pais))
             throw new BusinessLogicException("La ciudad no pertenece a los paises permitidos", BusinessError.PRECONDITION_FAILED);
         return await this.ciudadRepository.save(ciudad);
