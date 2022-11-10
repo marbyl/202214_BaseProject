@@ -6,15 +6,6 @@ import { CiudadEntity } from './ciudad.entity';
 import { CiudadService } from './ciudad.service';
 
 @Controller('ciudad')
-// axc
-// axc
-// axc
-// axc
-// axc
-// axc
-// axc
-// axc
-// axc
 @UseInterceptors(BusinessErrorsInterceptor)
 export class CiudadController {
     constructor(private readonly ciudadService: CiudadService) {}
