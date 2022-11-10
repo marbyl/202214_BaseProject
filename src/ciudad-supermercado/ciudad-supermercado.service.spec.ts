@@ -11,7 +11,6 @@ describe('MuseumArtworkService', () => {
   let service: CiudadSupermercadoService;
   let ciudadRepository: Repository<CiudadEntity>;
   let supermercadoRepository: Repository<SupermercadoEntity>;
-  let ciudad: CiudadEntity;
   let supermercadoList : SupermercadoEntity[];
 
   beforeEach(async () => {
@@ -31,7 +30,7 @@ describe('MuseumArtworkService', () => {
     supermercadoRepository.clear();
     ciudadRepository.clear();
 
-    supermercadoList = [];
+
     for(let i = 0; i < 5; i++){
         const supermercado: SupermercadoEntity = await supermercadoRepository.save({
           latitud : faker.address.latitude(),
@@ -42,12 +41,6 @@ describe('MuseumArtworkService', () => {
         supermercadoList.push(supermercado);
     }
 
-    ciudad = await ciudadRepository.save({
-      nombre : faker.address.cityName(), 
-      numeroHabitantes: faker.datatype.number(),
-      pais: "Argentina",
-
-    })
   }
 
   it('should be defined', () => {
