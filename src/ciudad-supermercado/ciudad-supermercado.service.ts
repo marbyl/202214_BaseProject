@@ -67,8 +67,8 @@ export class CiudadSupermercadoService {
         if (!ciudad)
             throw new BusinessLogicException("La ciudad con el id dado no fue encontrada", BusinessError.NOT_FOUND)
     
-        for (let i = 0; i < supermercados.length; i++) {
-            const supermercado: SupermercadoEntity = await this.supermercadoRepository.findOne({where: {id: supermercados[i].id}});
+        for (const element of supermercados) {
+            const supermercado: SupermercadoEntity = await this.supermercadoRepository.findOne({where: {id: element.id}});
             if (!supermercado)
                 throw new BusinessLogicException("El supermercado con el id dado no fue encontrado", BusinessError.NOT_FOUND);
         }

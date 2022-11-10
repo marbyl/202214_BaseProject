@@ -7,7 +7,6 @@ import { CiudadModule } from './ciudad/ciudad.module';
 import { SupermercadoEntity } from './supermercado/supermercado.entity';
 import { SupermercadoModule } from './supermercado/supermercado.module';
 import { CiudadSupermercadoModule } from './ciudad-supermercado/ciudad-supermercado.module';
-import { CiudadSupermercadoService } from './ciudad-supermercado/ciudad-supermercado.service';
 
 @Module({
   imports: [CiudadModule, SupermercadoModule, 
